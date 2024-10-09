@@ -1,0 +1,172 @@
+body {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font-family: Arial, sans-serif;
+  color: #fff; /* Цвет текста */
+  padding: 5px;
+  overflow: auto; /* Разрешаем вертикальную прокрутку */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('img/bg.webp'); /* Укажите путь к изображению фона */
+  background-size: cover;
+  background-position: center;
+  z-index: -2; /* Под текстом */
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемняющий цвет */
+  z-index: -1; /* Под текстом */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 50px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8); /* Тень для улучшения читаемости */
+}
+
+h2 {
+  text-align: center;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8); /* Тень для улучшения читаемости */
+}
+
+.slider {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slides {
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  margin: 20px 0;
+}
+
+.image-container {
+  position: relative; /* Установите относительное позиционирование */
+  padding-top: 150px; /* Установите отступ сверху для контейнера */
+  width: 100%; /* Задайте ширину контейнера */
+  height: 400px; /* Задайте высоту контейнера или используйте min-height */
+  overflow: hidden; /* Скрыть все, что выходит за границы контейнера */
+}
+
+/* Общие стили для изображений */
+.monument-img {
+  max-width: 100%; /* Убедитесь, что изображение не превышает ширину контейнера */
+  height: auto; /* Установите авто, чтобы сохранить пропорции */
+}
+
+/* Специфические стили для 3.jpg */
+.image-3 {
+  position: absolute; /* Позволяет обрезать изображение */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%); /* Центрирует изображение */
+  border-radius: 8px; /* Добавляет закругление углов */
+  width: auto; /* Используйте авто, чтобы сохранить пропорции */
+}
+
+.image-5 {
+  position: absolute; /* Позволяет обрезать изображение */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%); /* Центрирует изображение */
+  border-radius: 8px; /* Добавляет закругление углов */
+  width: auto; /* Используйте авто, чтобы сохранить пропорции */
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.7); /* Сделаем кнопки более заметными */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 10; /* Убедитесь, что кнопки над картой */
+}
+
+button.prev {
+  left: -60px; /* Переместите кнопку влево */
+}
+
+button.next {
+  right: -60px; /* Переместите кнопку вправо */
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* При наведении */
+}
+
+/* Стиль для текста */
+p {
+  font-weight: 300;
+  z-index: 1; /* Обеспечиваем, что текст над затемнением */
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+  button.prev, button.next {
+      width: 40px; /* Уменьшаем размер кнопок для мобильных */
+      height: 40px;
+      left: -50px; /* Сдвигаем кнопки ближе к краю */
+      right: -50px;
+  }
+}
+
+.image-container {
+  width: 100%;
+  height: 300px; /* Увеличьте высоту контейнера изображения */
+  overflow: hidden; /* Скрыть часть изображения, выходящую за пределы контейнера */
+  position: relative; /* Для абсолютного позиционирования изображения */
+}
+
+.monument-img {
+  width: 100%;
+  height: 100%; /* Задайте высоту в 100% */
+  object-fit: cover; /* Измените способ отображения изображения */
+  position: absolute; /* Позволяет обрезать изображение */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрирует изображение */
+  border-radius: 8px; /* Добавляет закругление углов */
+}
+
+.wrapper {
+  
+  background-color: rgba(0, 0, 0, 0.6); /* Затемняем фон текста для лучшей читаемости */
+  padding: 10px;
+  border-radius: 4px;
+  position: relative; /* Чтобы текст не перекрывался */
+}
