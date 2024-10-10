@@ -170,3 +170,21 @@ p {
   border-radius: 4px;
   position: relative; /* Чтобы текст не перекрывался */
 }
+
+
+
+.map-link {
+  position: relative; /* Относительное позиционирование */
+  top: -10px; /* Поднимаем ссылку вверх */
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.map-link:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
